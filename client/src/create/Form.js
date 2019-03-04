@@ -79,7 +79,7 @@ export default function Form({ data, onSubmit, onInputChange }) {
         onChange={onInputChange}
         value={data.size}
         type="number"
-        placeholder="Größe"
+        placeholder="Groesse"
         name="size"
       />
 

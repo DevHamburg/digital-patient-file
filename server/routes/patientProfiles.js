@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   PatientProfile.create(req.body)
-    .then(patientProfile => res.json(patientProfile))
+    .then(patientProfile => res.json({ patientProfile }))
     .catch(err => res.json(err))
 })
 

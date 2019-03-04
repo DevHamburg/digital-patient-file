@@ -8,7 +8,6 @@ import {
   getPatientProfilesFromStorage,
   postNewPatientProfile,
   savePatientProfilesToStorage,
-  togglePatientProfileBookmark,
 } from '../services'
 import SettingsPage from '../settings/SettingsPage'
 import GlobalStyle from './GlobalStyle'
@@ -43,13 +42,13 @@ const StyledLink = styled(NavLink)`
 `
 
 function App() {
-  const [patientProfiles, setPatientProfile] = useState(
+  const [patientProfiles, setPatientProfiles] = useState(
     getPatientProfilesFromStorage()
   )
 
   useEffect(() => {
     getAllPatientProfiles().then(res => {
-      setPatientProfile(res.data)
+      setPatientProfiles(res.data)
     })
   }, [])
 
@@ -59,21 +58,8 @@ function App() {
 
   function createPatientProfile(data) {
     postNewPatientProfile(data).then(res => {
-      setPatientProfile([...patientProfiles, res.data])
+      setPatientProfiles([...patientProfiles, res.data])
     })
-  }
-
-  function toggleBookmark(patientProfile) {
-    togglePatientProfileBookmark(patientProfile)
-      .then(res => {
-        const index = patientProfiles.indexOf(patientProfile)
-        setPatientProfile([
-          ...patientProfiles.slice(0, index),
-          { ...res.data },
-          ...patientProfiles.slice(index + 1),
-        ])
-      })
-      .catch(err => console.log(err))
   }
 
   return (
@@ -83,23 +69,10 @@ function App() {
           exact
           path="/"
           render={() => (
-            <PatientProfilePage
-              patientProfiles={patientProfiles}
-              onBookmark={toggleBookmark}
-            />
+            <PatientProfilePage patientProfiles={patientProfiles} />
           )}
         />
-        <Route
-          path="/bookmarks"
-          render={() => (
-            <PatientProfilePage
-              patientProfiles={patientProfiles.filter(
-                patientProfile => patientProfile.bookmarked
-              )}
-              onBookmark={toggleBookmark}
-            />
-          )}
-        />
+
         <Route
           path="/create-patient-profile"
           render={() => (
@@ -109,11 +82,12 @@ function App() {
         <Route path="/settings" component={SettingsPage} />
         <Nav>
           <StyledLink exact to="/">
-            Home
+            Patienten Profil
           </StyledLink>
-          <StyledLink to="/bookmarks">Bookmarks</StyledLink>
-          <StyledLink to="/create-patient-profile">Add Patient</StyledLink>
-          <StyledLink to="/settings">Settings</StyledLink>
+          <StyledLink to="/create-patient-profile">
+            Patienten anlegen
+          </StyledLink>
+          <StyledLink to="/settings">Krebsanalyse</StyledLink>
         </Nav>
         <GlobalStyle />
       </Grid>

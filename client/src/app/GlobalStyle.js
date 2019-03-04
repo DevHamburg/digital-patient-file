@@ -28,14 +28,14 @@ export default createGlobalStyle`
 
   input, textarea {
     appearance: none;
-    border: 4px solid #ddd;
     border-radius: none;
-    background: white;
-    padding-left: 4px;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #4f4f4f;
   }
 
   button {
-    background: hotpink;
+    background: dodgerblue ;
     border: none;
     border-radius: 4px;
     color: white;

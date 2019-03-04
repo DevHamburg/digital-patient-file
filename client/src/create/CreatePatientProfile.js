@@ -13,12 +13,12 @@ const Grid = styled.section`
 const defaultData = {
   name: '',
   surname: '',
-  age: 0,
+  age: '',
   gender: '',
-  contact: 0,
+  contact: '',
   findings: '',
-  weight: 0,
-  size: 0,
+  weight: '',
+  size: '',
   bloodType: '',
   bloodPressure: '',
 }
@@ -34,7 +34,7 @@ export default function CreatePatientProfile(props) {
 
   function onSubmit(event) {
     event.preventDefault()
-    props.onSubmit({ ...data })
+    props.onSubmit(data)
     setData(defaultData)
   }
 

@@ -3,43 +3,37 @@ const mongoose = require('mongoose')
 const PatientProfileSchema = new mongoose.Schema({
   name: {
     type: mongoose.SchemaTypes.String,
-    default: '- no name yet -',
   },
   surname: {
     type: mongoose.SchemaTypes.String,
-    default: '- no surname yet -',
   },
   age: {
     type: mongoose.SchemaTypes.Number,
-    default: '- no age yet -',
+    set: val => Number(val),
   },
   gender: {
     type: mongoose.SchemaTypes.String,
-    default: '- no gender yet -',
   },
   contact: {
     type: mongoose.SchemaTypes.Number,
-    default: '- no contact yet -',
+    set: val => Number(val),
   },
   findings: {
     type: mongoose.SchemaTypes.String,
-    default: '- no findings yet -',
   },
   weight: {
     type: mongoose.SchemaTypes.Number,
-    default: '- no weight yet -',
+    set: val => Number(val),
   },
   size: {
     type: mongoose.SchemaTypes.Number,
-    default: '- no size yet -',
+    set: val => Number(val),
   },
   bloodType: {
     type: mongoose.SchemaTypes.String,
-    default: '- no blood type yet -',
   },
   bloodPressure: {
     type: mongoose.SchemaTypes.String,
-    default: '- no blood pressure yet -',
   },
 })
 
