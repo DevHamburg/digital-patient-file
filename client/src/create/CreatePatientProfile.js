@@ -13,12 +13,12 @@ const Grid = styled.section`
 const defaultData = {
   name: '',
   surname: '',
-  age: '',
+  age: 22,
   gender: '',
   contact: '',
   findings: '',
-  weight: '',
-  size: '',
+  weight: 80,
+  size: 180,
   bloodType: '',
   bloodPressure: '',
 }

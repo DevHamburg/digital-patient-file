@@ -11,10 +11,13 @@ import {
 } from '../services'
 import SettingsPage from '../settings/SettingsPage'
 import GlobalStyle from './GlobalStyle'
+import { FaUser, FaUserPlus, FaChartPie } from 'react-icons/fa'
+import logo from '../images/DevHamburgHealth.png'
 
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: auto 48px;
+  grid-template-rows: auto 68px;
+  background: lightgray;
   position: absolute;
   top: 0;
   left: 0;
@@ -23,21 +26,30 @@ const Grid = styled.div`
 `
 
 const Nav = styled.nav`
+  background: lightgray;
   display: grid;
+  grid-template-rows: auto;
   grid-auto-flow: column;
   grid-gap: 2px;
 `
 
 const StyledLink = styled(NavLink)`
-  display: flex;
-  justify-content: center;
+  display: grid;
+  justify-items: center;
   align-items: center;
-  background: #333;
-  color: white;
+  background: white;
+  color: lightgrey;
   text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 8px;
 
   &.active {
-    background: hotpink;
+    color: #5fbf00;
+  }
+  & img {
+    height: 32px;
+    width: 120px;
   }
 `
 
@@ -81,13 +93,20 @@ function App() {
         />
         <Route path="/settings" component={SettingsPage} />
         <Nav>
+          <StyledLink to="/">
+            <img src={logo} alt="logo" />
+          </StyledLink>
           <StyledLink exact to="/">
+            <FaUser style={{ fontSize: '28px' }} />
             Patienten Profil
           </StyledLink>
           <StyledLink to="/create-patient-profile">
-            Patienten anlegen
+            <FaUserPlus style={{ fontSize: '28px' }} /> Patienten anlegen
           </StyledLink>
-          <StyledLink to="/settings">Krebsanalyse</StyledLink>
+          <StyledLink to="/settings">
+            <FaChartPie style={{ fontSize: '28px' }} />
+            Krebsanalyse
+          </StyledLink>
         </Nav>
         <GlobalStyle />
       </Grid>
