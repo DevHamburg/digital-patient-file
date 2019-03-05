@@ -30,7 +30,6 @@ export default function PatientProfile({
   size,
   bloodType,
   bloodPressure,
-  id,
 }) {
   return (
     <div css="padding: 10px 0 0; scroll-snap-align: start;">
@@ -41,8 +40,8 @@ export default function PatientProfile({
         <p>Geschlecht: {gender}</p>
         <p>Kontaktnummer: {contact}</p>
         <p>Befunde: {findings}</p>
-        <p>Gewicht: {weight}</p>
-        <p>Groesse: {size}</p>
+        <p>Gewicht: {weight}kg</p>
+        <p>Groesse: {size}cm</p>
         <p>Blutgruppe: {bloodType}</p>
         <p>Blutdruck: {bloodPressure}</p>
       </StyledPatientProfile>
