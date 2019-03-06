@@ -15,7 +15,7 @@ export default function PatientProfilePage({ patientProfiles }) {
     <PageGrid>
       <Header />
       <PatientProfileContainer>
-        {patientProfiles.map(patientProfile => (
+        {patientProfiles.map((patientProfile, index) => (
           <PatientProfile
             {...patientProfile}
             key={patientProfile._id}

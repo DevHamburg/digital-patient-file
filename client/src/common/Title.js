@@ -3,9 +3,8 @@ export default styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  margin-bottom: 4px;
-  background: #333;
+  height: 68px;
+  background: white;
   color: white;
   text-transform: uppercase;
 `

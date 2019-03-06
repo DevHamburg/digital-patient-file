@@ -7,18 +7,18 @@ import Title from '../common/Title'
 
 const Grid = styled.section`
   display: grid;
+  padding: 8px;
   align-content: flex-end;
-  padding: 12px;
 `
 const defaultData = {
   name: '',
   surname: '',
-  age: 22,
+  age: undefined,
   gender: '',
-  contact: '',
+  contact: undefined,
   findings: '',
-  weight: 80,
-  size: 180,
+  weight: undefined,
+  size: undefined,
   bloodType: '',
   bloodPressure: '',
 }
@@ -65,16 +65,16 @@ export default function CreatePatientProfile(props) {
           bloodType ||
           bloodPressure) && (
           <PatientProfile
-            name={name || 'No name yet'}
-            surname={surname || 'No surname yet'}
+            name={name}
+            surname={surname}
             age={age}
-            gender={gender || 'No gender yet'}
+            gender={gender}
             contact={contact}
-            findings={findings || 'No findings yet'}
+            findings={findings}
             weight={weight}
             size={size}
-            bloodType={bloodType || 'No blood type yet'}
-            bloodPressure={bloodPressure || 'No blood Pressure yet'}
+            bloodType={bloodType}
+            bloodPressure={bloodPressure}
           />
         )}
       </PatientProfileContainer>

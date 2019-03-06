@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const PatientProfileSchema = new mongoose.Schema({
+  image: {
+    type: mongoose.SchemaTypes.String,
+  },
+
   name: {
     type: mongoose.SchemaTypes.String,
   },

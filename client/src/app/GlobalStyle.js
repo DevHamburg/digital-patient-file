@@ -21,25 +21,4 @@ export default createGlobalStyle`
   ul, ol {
     margin: 0;
   }
-
-  input, textarea, button {
-    font-size: 1em;
-  }
-
-  input, textarea {
-    appearance: none;
-    border-radius: none;
-    padding: 4px;
-    border-radius: 4px;
-    border: 1px solid #4f4f4f;
-  }
-
-  button {
-    background: dodgerblue ;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-weight: bold;
-
-  }
 `

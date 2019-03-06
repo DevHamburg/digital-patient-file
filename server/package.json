@@ -11,9 +11,12 @@
   "author": "Dejan Guberinic",
   "license": "UNLICENSED",
   "dependencies": {
+    "cloudinary": "^1.13.2",
     "cors": "2.8.5",
     "express": "4.16.4",
     "mongoose": "5.4.14",
+    "multer": "^1.4.1",
+    "multer-storage-cloudinary": "^2.2.1",
     "nodemon": "1.18.10",
     "uid": "0.0.2"
   }

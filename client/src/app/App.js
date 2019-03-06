@@ -16,7 +16,7 @@ import logo from '../images/DevHamburgHealth.png'
 
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: auto 68px;
+  grid-template-rows: auto 120px;
   background: lightgray;
   position: absolute;
   top: 0;
@@ -42,7 +42,7 @@ const StyledLink = styled(NavLink)`
   text-decoration: none;
   font-size: 16px;
   text-transform: uppercase;
-  padding: 8px;
+  padding: 12px;
 
   &.active {
     color: #5fbf00;
@@ -97,14 +97,14 @@ function App() {
             <img src={logo} alt="logo" />
           </StyledLink>
           <StyledLink exact to="/">
-            <FaUser style={{ fontSize: '28px' }} />
+            <FaUser style={{ fontSize: '38px' }} />
             Patienten Profil
           </StyledLink>
           <StyledLink to="/create-patient-profile">
-            <FaUserPlus style={{ fontSize: '28px' }} /> Patienten anlegen
+            <FaUserPlus style={{ fontSize: '38px' }} /> Patienten anlegen
           </StyledLink>
           <StyledLink to="/settings">
-            <FaChartPie style={{ fontSize: '28px' }} />
+            <FaChartPie style={{ fontSize: '38px' }} />
             Krebsanalyse
           </StyledLink>
         </Nav>
