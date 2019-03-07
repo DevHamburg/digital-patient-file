@@ -5,6 +5,7 @@ import PatientProfileContainer from '../patient-profile/PatientProfileContainer'
 import Form from './Form'
 import Title from '../common/Title'
 import axios from 'axios'
+const env = require('dotenv').config()
 
 const Grid = styled.section`
   display: grid;
@@ -34,7 +35,7 @@ export default function CreatePatientProfile(props) {
 
     const formData = new FormData()
     formData.append('file', event.target.files[0])
-    formData.append('upload_preset', 'cerhs0is')
+    formData.append('upload_preset', 'dyhojswkc')
 
     // imageUpload(url, formData)
     //   .then(onImageSave)
