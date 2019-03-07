@@ -12,7 +12,7 @@ import {
 import SettingsPage from '../settings/SettingsPage'
 import GlobalStyle from './GlobalStyle'
 import { FaUser, FaUserPlus, FaChartPie } from 'react-icons/fa'
-import logo from '../images/DevHamburgHealth.png'
+import logo from '../api/images/DevHamburgHealth.png'
 
 const Grid = styled.div`
   display: grid;

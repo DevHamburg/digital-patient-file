@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import profile1 from '../images/profile-pictures/profile1.png'
+import profile1 from '../api/images/profile-pictures/profile1.png'
 import { FaWeight, FaRulerVertical, FaTint, FaStopwatch } from 'react-icons/fa'
 
 const StyledPatientProfile = styled.section`
@@ -59,6 +59,7 @@ export default function PatientProfile({
   size,
   bloodType,
   bloodPressure,
+  image,
 }) {
   return (
     <div css="padding: 10px 0 0; scroll-snap-align: start;">
@@ -67,7 +68,7 @@ export default function PatientProfile({
           <Section>
             <CardHeader>
               <div>
-                <img src={profile1} alt="" />
+                <img src={image} alt="" />
               </div>
               <div>
                 <h2>{name}</h2>

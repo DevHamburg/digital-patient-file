@@ -6,14 +6,16 @@ export function getAllPatientProfiles() {
   return axios.get(patientProfilesPath)
 }
 
-export function postNewPatientProfile(patientProfile) {
-  return axios.post(patientProfilesPath, patientProfile)
+export function imageUpload({ url, formData }) {
+  return axios.post(url, formData, {
+    headers: {
+      'Content-type': 'multipart/form-data',
+    },
+  })
 }
 
-export function togglePatientProfileBookmark(patientProfile) {
-  return axios.patch(`${patientProfilesPath}/${patientProfile._id}`, {
-    bookmarked: !patientProfile.bookmarked,
-  })
+export function postNewPatientProfile(patientProfile) {
+  return axios.post(patientProfilesPath, patientProfile)
 }
 
 export function getPatientProfilesFromStorage() {

@@ -14,6 +14,7 @@ export default function PatientProfilePage({ patientProfiles }) {
   return (
     <PageGrid>
       <Header />
+      <input type="search" />
       <PatientProfileContainer>
         {patientProfiles.map((patientProfile, index) => (
           <PatientProfile

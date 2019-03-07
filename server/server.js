@@ -2,8 +2,10 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
+const env = require('dotenv').config()
 
-mongoose.connect('mongodb://localhost:27017/learning', {
+// process.env.DB_CONNECT -- if live
+mongoose.connect(process.env.DB_CONNECT, {
   useNewUrlParser: true,
 })
 app.use(cors())

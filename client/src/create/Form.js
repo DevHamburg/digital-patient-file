@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FilePond } from 'react-filepond'
 import 'filepond/dist/filepond.min.css'
 
 const StyledForm = styled.form`
@@ -30,14 +29,9 @@ const StyledButton = styled.button`
   font-size: 24px;
 `
 
-export default function Form({ data, onSubmit, onInputChange }) {
+export default function Form({ data, onSubmit, onImageUpload, onInputChange }) {
   return (
-    <StyledForm
-      onSubmit={onSubmit}
-      action="/api/images"
-      method="post"
-      enctype="multipart/form-data"
-    >
+    <StyledForm onSubmit={onSubmit}>
       <div>
         <StyledInput
           onChange={onInputChange}
@@ -120,7 +114,7 @@ export default function Form({ data, onSubmit, onInputChange }) {
         />
 
         <StyledInput
-          onChange={onInputChange}
+          onChange={onImageUpload}
           value={data.image}
           type="file"
           placeholder="Image"
