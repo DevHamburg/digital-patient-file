@@ -110,7 +110,7 @@ export default function CreatePatientProfile(props) {
             bloodPressure={bloodPressure}
           />
         )}
-        <Title css="position: absolute; top: 0; width: 100%;  color: #5fbf00; font-height: 34px;">
+        <Title css="position: absolute; top: 0; width: 100%;  color: #5fbf00; font-size: 34px;">
           Patienten anlegen
         </Title>
       </PatientProfileContainer>
