@@ -1,0 +1,30 @@
+---
+name: Bmi calculator
+---
+
+import { Bmi } from './Bmi'
+import ReactSpeedometer from 'react-d3-speedometer'
+
+# Bmi calculator
+
+<StyledBmi>
+  <ReactSpeedometer />
+</StyledBmi>
+
+    <StyledBmi>
+      <h3>HEALTH: {health}</h3>
+      <ReactSpeedometer
+        needleHeightRatio={0.9}
+        minValue={15}
+        maxValue={40}
+        value={bmi}
+        needleColor="white"
+        startColor="#5fbf00"
+        endColor="#5fbf00"
+        segments={7}
+        textColor="lightgray"
+        width={300}
+        height={160}
+      />
+      <h2>BMI: {bmi}</h2>
+    </StyledBmi>

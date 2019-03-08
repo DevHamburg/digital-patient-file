@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import 'filepond/dist/filepond.min.css'
 
 const StyledForm = styled.form`
   display: grid;
