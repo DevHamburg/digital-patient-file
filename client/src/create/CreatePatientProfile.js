@@ -16,30 +16,29 @@ const defaultData = {
   image: '',
   name: '',
   surname: '',
-  age: undefined,
+  age: '',
   gender: '',
-  contact: undefined,
+  contact: '',
   findings: '',
-  weight: undefined,
-  size: undefined,
+  weight: '',
+  height: '',
   bloodType: '',
   bloodPressure: '',
 }
+
+const CLOUDNAME = process.env.REACT_APP_CLOUDINARY_CLOUDNAME
+const PRESET = process.env.REACT_APP_CLOUDINARY_PRESET
 
 export default function CreatePatientProfile(props) {
   const [data, setData] = useState(defaultData)
   const [img, setImg] = useState('')
 
   function onImageUpload(event) {
-    const url = `https://api.cloudinary.com/v1_1/dyhojswkc/upload`
+    const url = `https://api.cloudinary.com/v1_1/${CLOUDNAME}/upload`
 
     const formData = new FormData()
     formData.append('file', event.target.files[0])
-    formData.append('upload_preset', 'dyhojswkc')
-
-    // imageUpload(url, formData)
-    //   .then(onImageSave)
-    //  .catch(err => console.error(err))
+    formData.append('upload_preset', PRESET)
 
     axios
       .post(url, formData, {
@@ -64,8 +63,9 @@ export default function CreatePatientProfile(props) {
 
   function onSubmit(event) {
     event.preventDefault()
-    setData({ ...data, image: img })
-    props.onSubmit(data)
+    const dataCollection = { ...data, image: img }
+    setData(dataCollection)
+    props.onSubmit(dataCollection)
     setData(defaultData)
   }
 
@@ -78,14 +78,13 @@ export default function CreatePatientProfile(props) {
     contact,
     findings,
     weight,
-    size,
+    height,
     bloodType,
     bloodPressure,
   } = data
   return (
     <Grid>
-      <Title css="position: absolute; top: 0; width: 100%">Create</Title>
-      <PatientProfileContainer data-cy="preview-container">
+      <PatientProfileContainer>
         {(image ||
           name ||
           surname ||
@@ -94,7 +93,7 @@ export default function CreatePatientProfile(props) {
           contact ||
           findings ||
           weight ||
-          size ||
+          height ||
           bloodType ||
           bloodPressure) && (
           <PatientProfile
@@ -106,11 +105,14 @@ export default function CreatePatientProfile(props) {
             contact={contact}
             findings={findings}
             weight={weight}
-            size={size}
+            height={height}
             bloodType={bloodType}
             bloodPressure={bloodPressure}
           />
         )}
+        <Title css="position: absolute; top: 0; width: 100%;  color: #5fbf00; font-height: 34px;">
+          Patienten anlegen
+        </Title>
       </PatientProfileContainer>
       <Form
         data={data}

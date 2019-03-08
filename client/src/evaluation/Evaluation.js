@@ -5,7 +5,9 @@ export default class SettingsPage extends Component {
   render() {
     return (
       <section>
-        <Title css="position: absolute; top: 0; width: 100%">Settings</Title>
+        <Title css="position: absolute; top: 0; width: 100%;  color: #5fbf00; font-size: 34px;">
+          Krebsanalyse
+        </Title>
       </section>
     )
   }

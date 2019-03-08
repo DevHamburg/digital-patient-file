@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import profile1 from '../api/images/profile-pictures/profile1.png'
 import { FaWeight, FaRulerVertical, FaTint, FaStopwatch } from 'react-icons/fa'
+import Title from '../common/Title'
+import Bmi from '../bmi-calculator/Bmi'
 
 const StyledPatientProfile = styled.section`
   position: relative;
@@ -17,7 +18,7 @@ const Grid = styled.div`
 const Section = styled.div`
   background: white;
   padding: 8px;
-  font-size: 24px;
+  font-height: 24px;
 `
 const CardHeader = styled.div`
   display: grid;
@@ -38,12 +39,12 @@ const CardHeader = styled.div`
 PatientProfile.propTypes = {
   name: PropTypes.string,
   surname: PropTypes.string,
-  age: PropTypes.number,
-  contact: PropTypes.number,
+  age: PropTypes.string,
+  contact: PropTypes.string,
   gender: PropTypes.string,
   findings: PropTypes.string,
-  weight: PropTypes.number,
-  size: PropTypes.number,
+  weight: PropTypes.string,
+  height: PropTypes.string,
   bloodType: PropTypes.string,
   bloodPressure: PropTypes.string,
 }
@@ -56,13 +57,16 @@ export default function PatientProfile({
   contact,
   findings,
   weight,
-  size,
+  height,
   bloodType,
   bloodPressure,
   image,
 }) {
   return (
-    <div css="padding: 10px 0 0; scroll-snap-align: start;">
+    <React.Fragment>
+      <Title css="position: absolute; top: 0; width: 100%;  color: #5fbf00; font-height: 34px;">
+        Patienten Profil
+      </Title>
       <StyledPatientProfile>
         <Grid>
           <Section>
@@ -87,7 +91,7 @@ export default function PatientProfile({
             </p>
             <p>
               Groesse: <FaRulerVertical />
-              {size} cm
+              {height} cm
             </p>
             <p>
               Blutgruppe: <FaTint /> {bloodType}
@@ -97,8 +101,11 @@ export default function PatientProfile({
               {bloodPressure}
             </p>
           </Section>
+          <Section>
+            <Bmi weight={weight} height={height} gender={gender} />
+          </Section>
         </Grid>
       </StyledPatientProfile>
-    </div>
+    </React.Fragment>
   )
 }

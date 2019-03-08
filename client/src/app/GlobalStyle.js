@@ -6,11 +6,14 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: sans-serif;
+    font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
     margin: 0;
   }
 
   html, body {
+    font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
     position: fixed;
     width: 100%;
     height: 100%;

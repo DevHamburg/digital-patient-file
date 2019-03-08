@@ -9,7 +9,7 @@ import {
   postNewPatientProfile,
   savePatientProfilesToStorage,
 } from '../services'
-import SettingsPage from '../settings/SettingsPage'
+import Evaluation from '../evaluation/Evaluation'
 import GlobalStyle from './GlobalStyle'
 import { FaUser, FaUserPlus, FaChartPie } from 'react-icons/fa'
 import logo from '../api/images/DevHamburgHealth.png'
@@ -91,7 +91,7 @@ function App() {
             <CreatePatientProfile onSubmit={createPatientProfile} />
           )}
         />
-        <Route path="/settings" component={SettingsPage} />
+        <Route path="/evaluation" component={Evaluation} />
         <Nav>
           <StyledLink to="/">
             <img src={logo} alt="logo" />
@@ -103,7 +103,7 @@ function App() {
           <StyledLink to="/create-patient-profile">
             <FaUserPlus style={{ fontSize: '38px' }} /> Patienten anlegen
           </StyledLink>
-          <StyledLink to="/settings">
+          <StyledLink to="/evaluation">
             <FaChartPie style={{ fontSize: '38px' }} />
             Krebsanalyse
           </StyledLink>

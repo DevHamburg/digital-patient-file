@@ -51,7 +51,7 @@ export default function Form({ data, onSubmit, onImageUpload, onInputChange }) {
         <StyledInput
           onChange={onInputChange}
           value={data.age}
-          type="number"
+          type="text"
           placeholder="Alter"
           name="age"
         />
@@ -67,7 +67,7 @@ export default function Form({ data, onSubmit, onImageUpload, onInputChange }) {
         <StyledInput
           onChange={onInputChange}
           value={data.contact}
-          type="number"
+          type="text"
           placeholder="Kontaktnummer"
           name="contact"
         />
@@ -84,17 +84,17 @@ export default function Form({ data, onSubmit, onImageUpload, onInputChange }) {
         <StyledInput
           onChange={onInputChange}
           value={data.weight}
-          type="number"
+          type="text"
           placeholder="Gewicht"
           name="weight"
         />
 
         <StyledInput
           onChange={onInputChange}
-          value={data.size}
-          type="number"
+          value={data.height}
+          type="text"
           placeholder="Groesse"
-          name="size"
+          name="height"
         />
 
         <StyledInput

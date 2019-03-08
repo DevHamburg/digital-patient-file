@@ -12,25 +12,25 @@ const PatientProfileSchema = new mongoose.Schema({
     type: mongoose.SchemaTypes.String,
   },
   age: {
-    type: mongoose.SchemaTypes.Number,
+    type: mongoose.SchemaTypes.String,
     set: val => Number(val),
   },
   gender: {
     type: mongoose.SchemaTypes.String,
   },
   contact: {
-    type: mongoose.SchemaTypes.Number,
+    type: mongoose.SchemaTypes.String,
     set: val => Number(val),
   },
   findings: {
     type: mongoose.SchemaTypes.String,
   },
   weight: {
-    type: mongoose.SchemaTypes.Number,
+    type: mongoose.SchemaTypes.String,
     set: val => Number(val),
   },
-  size: {
-    type: mongoose.SchemaTypes.Number,
+  height: {
+    type: mongoose.SchemaTypes.String,
     set: val => Number(val),
   },
   bloodType: {
