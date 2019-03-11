@@ -12,6 +12,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/patientProfiles', require('./routes/patientProfiles'))
+app.use('/patientProfiles', require('./routes/patientProfiles'))
 
 const port = process.env.PORT || 4000
 app.listen(port, () => {

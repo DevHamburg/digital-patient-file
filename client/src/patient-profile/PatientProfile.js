@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import { FaWeight, FaRulerVertical, FaTint, FaStopwatch, FaSearch } from 'react-icons/fa'
-import Title from '../common/Title'
+import { FaWeight, FaRulerVertical, FaTint, FaStopwatch } from 'react-icons/fa'
 import Bmi from '../bmi-calculator/Bmi'
 
 const StyledPatientProfile = styled.section`
@@ -35,17 +34,6 @@ const CardHeader = styled.div`
   }
 `
 
-const PageHeader = styled.div`
-display: flex;
-justify-self: end;
-height: 50px;
-border: none;
-border-bottom: 2px solid #5fbf00;
-font-size: 24px;
-padding-left: 10px;
-`
-
-
 PatientProfile.propTypes = {
   name: PropTypes.string,
   surname: PropTypes.string,
@@ -57,6 +45,7 @@ PatientProfile.propTypes = {
   height: PropTypes.string,
   bloodType: PropTypes.string,
   bloodPressure: PropTypes.string,
+  search: PropTypes.string,
 }
 
 export default function PatientProfile({
@@ -74,16 +63,6 @@ export default function PatientProfile({
 }) {
   return (
     <React.Fragment>
-      <Title css="position: absolute; top: 0; width: 100%;  color: #5fbf00; font-size: 34px;">
-        Patienten Profil
-       <PageHeader>
-        <input
-          type="search"
-          placeholder="Patienten suche"
-          style={{ display:'flex', alignSelf: 'flex-end', paddingBottom: '5px', fontSize: '24px', width: '200px'}}/>
-          <FaSearch style={{ display:'flex', alignSelf: 'flex-end', paddingBottom: '10px', fontSize: '34px' }}/>
-        </PageHeader>
-      </Title>
       <StyledPatientProfile>
         <Grid>
           <Section>
