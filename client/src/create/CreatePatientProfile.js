@@ -5,7 +5,7 @@ import PatientProfileContainer from '../patient-profile/PatientProfileContainer'
 import Form from './Form'
 import Title from '../common/Title'
 import axios from 'axios'
-const env = require('dotenv').config()
+require('dotenv').config()
 
 const Grid = styled.section`
   display: grid;

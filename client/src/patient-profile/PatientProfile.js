@@ -9,6 +9,7 @@ import {
   FaSearch,
 } from 'react-icons/fa'
 import Title from '../common/Title'
+import { FaWeight, FaRulerVertical, FaTint, FaStopwatch } from 'react-icons/fa'
 import Bmi from '../bmi-calculator/Bmi'
 
 const StyledPatientProfile = styled.section`
@@ -62,6 +63,7 @@ PatientProfile.propTypes = {
   height: PropTypes.string,
   bloodType: PropTypes.string,
   bloodPressure: PropTypes.string,
+  search: PropTypes.string,
 }
 
 export default function PatientProfile({
@@ -103,6 +105,7 @@ export default function PatientProfile({
           />
         </PageHeader>
       </Title>
+
       <StyledPatientProfile>
         <Grid>
           <Section>
