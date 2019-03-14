@@ -22,3 +22,10 @@ yarn-debug.log*
 yarn-error.log*
 .docz
 .env
+
+/server/evaluation/__main__.py
+/server/evaluation/model.h5
+/server/__main__.py
+/server/model.h5
+
+
