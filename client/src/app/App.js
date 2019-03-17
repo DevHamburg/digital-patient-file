@@ -11,7 +11,7 @@ import {
 } from '../services'
 import Evaluation from '../evaluation/Evaluation'
 import GlobalStyle from './GlobalStyle'
-import { FaUser, FaUserPlus, FaChartPie } from 'react-icons/fa'
+import { FaRegAddressCard, FaUserPlus, FaChartPie } from 'react-icons/fa'
 import logo from '../api/images/DevHamburgHealth.png'
 
 const Grid = styled.div`
@@ -29,8 +29,20 @@ const Nav = styled.nav`
   background: lightgray;
   display: grid;
   grid-template-rows: auto;
-  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2px;
+`
+const StyledImg = styled.div`
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background: white;
+  padding: 12px;
+
+  & img {
+    height: 44px;
+    width: 180px;
+  }
 `
 
 const StyledLink = styled(NavLink)`
@@ -38,18 +50,15 @@ const StyledLink = styled(NavLink)`
   justify-items: center;
   align-items: center;
   background: white;
-  color: lightgrey;
+  color: #696969;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 24px;
   text-transform: uppercase;
   padding: 12px;
 
   &.active {
     color: #5fbf00;
-  }
-  & img {
-    height: 32px;
-    width: 120px;
+    border: 2px solid #5fbf00;
   }
 `
 
@@ -91,20 +100,20 @@ function App() {
             <CreatePatientProfile onSubmit={createPatientProfile} />
           )}
         />
-        <Route path="/evaluation" component={Evaluation} />
+        <Route path="/evaluation" render={() => <Evaluation />} />
         <Nav>
-          <StyledLink to="/">
+          <StyledImg>
             <img src={logo} alt="logo" />
-          </StyledLink>
+          </StyledImg>
           <StyledLink exact to="/">
-            <FaUser style={{ fontSize: '38px' }} />
+            <FaRegAddressCard style={{ fontSize: '44px' }} />
             Patienten Profil
           </StyledLink>
           <StyledLink to="/create-patient-profile">
-            <FaUserPlus style={{ fontSize: '38px' }} /> Patienten anlegen
+            <FaUserPlus style={{ fontSize: '44px' }} /> Patienten anlegen
           </StyledLink>
           <StyledLink to="/evaluation">
-            <FaChartPie style={{ fontSize: '38px' }} />
+            <FaChartPie style={{ fontSize: '44px' }} />
             Krebsanalyse
           </StyledLink>
         </Nav>

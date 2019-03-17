@@ -45,3 +45,5 @@ def predictImage(img_path):
 
 
 predictImage(sys.argv[1])
+
+

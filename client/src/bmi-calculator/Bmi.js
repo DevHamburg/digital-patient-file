@@ -2,7 +2,32 @@ import React from 'react'
 import styled from 'styled-components'
 import ReactSpeedometer from 'react-d3-speedometer'
 
-const StyledBmi = styled.div``
+const StyledBmi = styled.div`
+  display: grid;
+  font-family: Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  justify-content: center;
+  align-content: center;
+`
+const StyledStatus = styled.p`
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 28px;
+  color: #333;
+`
+
+const StyledResult = styled.p`
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 28px;
+  color: #333;
+`
 
 export default function Bmi({ height, weight, gender }) {
   let bmi, health
@@ -35,7 +60,7 @@ export default function Bmi({ height, weight, gender }) {
 
   return (
     <StyledBmi>
-      <h3>HEALTH: {health}</h3>
+      <StyledStatus>{health}</StyledStatus>
       <ReactSpeedometer
         needleHeightRatio={0.9}
         minValue={15}
@@ -43,13 +68,13 @@ export default function Bmi({ height, weight, gender }) {
         value={bmi}
         needleColor="white"
         startColor="#5fbf00"
-        endColor="#5fbf00"
-        segments={7}
-        textColor="lightgray"
-        width={300}
-        height={160}
+        endColor="lightgray"
+        segments={5}
+        // textColor="lightgray"
+        width={240}
+        height={130}
       />
-      <h2>BMI: {bmi}</h2>
+      <StyledResult>BMI: {bmi}</StyledResult>
     </StyledBmi>
   )
 }

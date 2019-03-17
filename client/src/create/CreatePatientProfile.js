@@ -5,13 +5,19 @@ import PatientProfileContainer from '../patient-profile/PatientProfileContainer'
 import Form from './Form'
 import Title from '../common/Title'
 import axios from 'axios'
+import { FaUserPlus } from 'react-icons/fa'
 require('dotenv').config()
 
 const Grid = styled.section`
   display: grid;
-  padding: 8px;
   align-content: flex-end;
 `
+
+const StyledTitleDiv = styled.div`
+  border-bottom: 2px solid #5fbf00;
+  padding: 10px;
+`
+
 const defaultData = {
   image: '',
   name: '',
@@ -110,8 +116,16 @@ export default function CreatePatientProfile(props) {
             bloodPressure={bloodPressure}
           />
         )}
-        <Title css="position: absolute; top: 0; width: 100%;  color: #5fbf00; font-size: 34px;">
-          Patienten anlegen
+        <Title css="position: absolute; top: 0; width: 100%;  color: #696969; font-size: 32px;">
+          <StyledTitleDiv>
+            <FaUserPlus
+              style={{
+                fontSize: '24px',
+                marginRight: '10px',
+              }}
+            />
+            Patient anlegen
+          </StyledTitleDiv>
         </Title>
       </PatientProfileContainer>
       <Form

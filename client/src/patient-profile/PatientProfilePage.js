@@ -1,24 +1,31 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import Header from '../common/Header'
 import PatientProfile from './PatientProfile'
 import PatientProfileContainer from './PatientProfileContainer'
-import { FaSearch } from 'react-icons/fa'
 import Title from '../common/Title'
+import Search from '../common/Search'
+import Background from '../api/images/DevBackground.png'
+import { FaUserPlus } from 'react-icons/fa'
 
 const PageGrid = styled.div`
   display: grid;
   grid-template-rows: auto 1fr;
   overflow: hidden;
 `
-const PageHeader = styled.div`
-  display: flex;
-  justify-self: end;
-  height: 50px;
-  border: none;
+// const BackgroundImage = styled.div`
+//   background: white;
+//   /* background-image: url(${Background}); */
+//   margin-top: 50px;
+//   width: 100%;
+//   height: 200px;
+//   position: relative;
+//   background-repeat: no-repeat;
+//   border-bottom: 10px solid white;
+// `
+
+const StyledTitleDiv = styled.div`
   border-bottom: 2px solid #5fbf00;
-  font-size: 24px;
-  padding-left: 10px;
+  padding: 10px;
 `
 
 export default function PatientProfilePage({ patientProfiles }) {
@@ -31,35 +38,19 @@ export default function PatientProfilePage({ patientProfiles }) {
 
   return (
     <PageGrid>
-      <Header />
-      <Title css="position: absolute; top: 0; width: 100%;  color: #5fbf00; font-size: 34px;">
-        Patienten Profil
-        <PageHeader>
-          <input
-            onChange={onSearchInput}
-            type="search"
-            placeholder="Patienten suche"
-            name="search"
+      {/* <BackgroundImage /> */}
+      <Title css="position: absolute; top: 0; width: 100%;  color: #696969; font-size: 32px;">
+        <StyledTitleDiv>
+          <FaUserPlus
             style={{
-              border: 'none',
-              display: 'flex',
-              alignSelf: 'flex-end',
-              paddingBottom: '5px',
               fontSize: '24px',
-              width: '200px',
-              outline: 'none',
+              marginRight: '10px',
             }}
           />
-          <FaSearch
-            style={{
-              display: 'flex',
-              alignSelf: 'flex-end',
-              paddingBottom: '10px',
-              fontSize: '34px',
-            }}
-          />
-        </PageHeader>
+          Patientenprofil
+        </StyledTitleDiv>
       </Title>
+      <Search onSearchInput={onSearchInput} />
       <PatientProfileContainer>
         {patientProfiles
           .filter(

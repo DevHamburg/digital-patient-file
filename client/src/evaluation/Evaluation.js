@@ -1,10 +1,33 @@
 import React, { Component } from 'react'
 import Title from '../common/Title'
 import axios from 'axios'
+import styled from 'styled-components'
+import { FaChartPie } from 'react-icons/fa'
 const IP = process.env.REACT_APP_BACKEND_IP
 const evaluationPath = `http://${IP}:4000/evaluation`
 
-export default class SettingsPage extends Component {
+const StyledEvaluation = styled.section`
+  display: grid;
+  padding: 8px;
+  align-content: center;
+  justify-content: center;
+`
+
+const StyledResult = styled.div`
+  font-size: 24px;
+  color: #5fbf00;
+`
+
+const StyledHeading = styled.h2`
+  font-size: 32px;
+  color: black;
+`
+const StyledTitleDiv = styled.div`
+  border-bottom: 2px solid #5fbf00;
+  padding: 10px;
+`
+
+export default class Evaluation extends Component {
   constructor() {
     super()
     this.state = {
@@ -33,16 +56,30 @@ export default class SettingsPage extends Component {
 
   render() {
     return (
-      <section>
-        <Title css="position: absolute; top: 0; width: 100%;  color: #5fbf00; font-size: 34px;">
-          Krebsanalyse
+      <StyledEvaluation>
+        <Title css="position: absolute; top: 0; width: 100%;  color: #696969; font-size: 32px;">
+          <StyledTitleDiv>
+            <FaChartPie
+              style={{
+                fontSize: '24px',
+                marginRight: '10px',
+              }}
+            />
+            Krebsanalyse
+          </StyledTitleDiv>
+        </Title>
+        <div>
           <form onSubmit={this.onSubmit}>
             <input type="file" name="selectedFile" onChange={this.onChange} />
             <button type="submit">Submit</button>
-            {this.state.result ? <div>{this.state.result.data}</div> : null}
           </form>
-        </Title>
-      </section>
+
+          <StyledHeading>Auswertung</StyledHeading>
+          {this.state.result ? (
+            <StyledResult>{this.state.result.data}</StyledResult>
+          ) : null}
+        </div>
+      </StyledEvaluation>
     )
   }
 }

@@ -4,8 +4,6 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const env = require('dotenv').config()
 const bodyParser = require('body-parser')
-const multer = require('multer')
-const path = require('path')
 
 mongoose.connect(process.env.DB_CONNECT, {
   useNewUrlParser: true,

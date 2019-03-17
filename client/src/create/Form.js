@@ -5,7 +5,7 @@ const StyledForm = styled.form`
   display: grid;
   grid-template-rows: auto;
   grid-gap: 2px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 `
 const StyledInput = styled.input`
   background: white;
@@ -62,7 +62,8 @@ export default function Form({ data, onSubmit, onImageUpload, onInputChange }) {
           placeholder="Geschlecht"
           name="gender"
         />
-
+      </div>
+      <div>
         <StyledInput
           onChange={onInputChange}
           value={data.contact}
@@ -78,8 +79,7 @@ export default function Form({ data, onSubmit, onImageUpload, onInputChange }) {
           placeholder="Befunde"
           name="findings"
         />
-      </div>
-      <div>
+
         <StyledInput
           onChange={onInputChange}
           value={data.weight}
@@ -95,7 +95,8 @@ export default function Form({ data, onSubmit, onImageUpload, onInputChange }) {
           placeholder="Groesse"
           name="height"
         />
-
+      </div>
+      <div>
         <StyledInput
           onChange={onInputChange}
           value={data.bloodType}

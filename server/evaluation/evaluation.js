@@ -33,14 +33,23 @@ router.post('/', upload.single('description'), (req, res) => {
     const process = spawn('python3', ['__main__.py', image])
 
     process.stdout.on('data', function(data) {
-      res.json(
-        data.toString()
-        //   .replace(/\s|\[|\]/g, '')
-        //   .slice(0, 5) * 100
-      )
+      const number = data
+        .toString()
+        .split(' ')[0]
+        .replace(/\s|\[|\]/g, ' ')
+
+      parseFloat(number)
+      const preResult = number * 100
+      const result = preResult.toFixed(2)
+
+      if (result > 80) {
+        res.json('Die Ausweretung ist zu ' + result + ' % negativ')
+      } else {
+        const newResult = 100 - result
+        res.json('Die Ausweretung ist zu ' + newResult + ' % positiv')
+      }
     })
   }
-
   callName(req)
   console.log(req.file.filename)
 })
