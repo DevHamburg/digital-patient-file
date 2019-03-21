@@ -36,7 +36,7 @@ export default function Search({ onSearchInput }) {
         <StyledInput
           onChange={onSearchInput}
           type="search"
-          placeholder="Patienten suche"
+          placeholder="Patientensuche"
           name="search"
         />
         <FaSearch />

@@ -63,6 +63,7 @@ const StyledLabel = styled.label`
   height: 50px;
   font-size: 24px;
   color: #5fbf00;
+  margin-top: 24px;
   margin-bottom: 24px;
 `
 const StyledButton = styled.button`
@@ -75,12 +76,13 @@ const StyledButton = styled.button`
   font-size: 22px;
   color: white;
   margin-bottom: 24px;
+  margin-top: 24px;
 `
 const CircleLoaderPosition = styled.div`
   display: grid;
   justify-content: center;
   align-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 100px;
 `
 
 export default class Evaluation extends Component {
@@ -172,7 +174,7 @@ export default class Evaluation extends Component {
           </StyledTitleDiv>
         </Title>
         <LoadingOverlay
-          text="Analyse wurde gestartet bitte warten..."
+          text="Analyse wurde gestartet. Einen Moment bitte."
           active={this.state.isActive}
           spinner={
             <CircleLoaderPosition>
@@ -203,7 +205,6 @@ export default class Evaluation extends Component {
             <h2>
               {this.state.result.procent}% {this.state.result.result}
             </h2>
-            {/* {!$imagePreview && <StyledImage src={imagePreviewUrl} />} */}
             <form onSubmit={this.onSubmit}>
               <StyledButtonGrid>
                 <StyledLabel htmlFor="input">

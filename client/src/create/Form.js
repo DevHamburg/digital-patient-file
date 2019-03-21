@@ -84,7 +84,7 @@ export default function Form({ data, onSubmit, onImageUpload, onInputChange }) {
           onChange={onInputChange}
           value={data.weight}
           type="text"
-          placeholder="Gewicht"
+          placeholder="Gewicht in kg"
           name="weight"
         />
 
@@ -92,7 +92,7 @@ export default function Form({ data, onSubmit, onImageUpload, onInputChange }) {
           onChange={onInputChange}
           value={data.height}
           type="text"
-          placeholder="Groesse"
+          placeholder="Größe in cm"
           name="height"
         />
       </div>
@@ -121,7 +121,7 @@ export default function Form({ data, onSubmit, onImageUpload, onInputChange }) {
           name="image"
         />
 
-        <StyledButton>Create</StyledButton>
+        <StyledButton>Speichern</StyledButton>
       </div>
     </StyledForm>
   )

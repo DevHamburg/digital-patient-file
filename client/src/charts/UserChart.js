@@ -36,7 +36,7 @@ export default function UserChart({ positiveResult, negativeResult }) {
     <div>
       <Chart
         chartType="PieChart"
-        data={[['Age', 'Weight'], ['donut negativ', 20], ['Positiv', 80]]}
+        data={[['Age', 'Weight'], ['Wert', 20], ['Rest', 80]]}
         options={pieOptions}
         graph_id="PieChart"
         width={'380px'}

@@ -124,7 +124,7 @@ export default function CreatePatientProfile(props) {
                 marginRight: '10px',
               }}
             />
-            Patient anlegen
+            Patienten anlegen
           </StyledTitleDiv>
         </Title>
       </PatientProfileContainer>
