@@ -1,10 +1,9 @@
 import React from 'react'
 import { Chart } from 'react-google-charts'
 
-export default function DonutChart() {
+export default function UserChart({ positiveResult, negativeResult }) {
   const pieOptions = {
-    title: '',
-    pieHole: 0.6,
+    pieHole: 0.5,
     slices: [
       {
         color: '#5fbf00',
@@ -30,17 +29,17 @@ export default function DonutChart() {
       width: '100%',
       height: '60%',
     },
-    fontName: 'Roboto',
+    fontName: 'Roboto, sans-serif',
   }
 
   return (
-    <div className="App">
+    <div>
       <Chart
         chartType="PieChart"
-        data={[['Age', 'Weight'], ['Negativ', 16], ['Positiv', 1.5]]}
+        data={[['Age', 'Weight'], ['donut negativ', 20], ['Positiv', 80]]}
         options={pieOptions}
         graph_id="PieChart"
-        width={'280px'}
+        width={'380px'}
         height={'280px'}
         legend_toggle
       />
