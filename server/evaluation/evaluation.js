@@ -39,14 +39,15 @@ router.post('/', upload.single('description'), (req, res) => {
         .replace(/\s|\[|\]/g, ' ')
 
       parseFloat(number)
+      console.log('number' + number)
       const preResult = number * 100
+      console.log('preResult' + preResult)
       const result = preResult.toFixed(2)
-
+      console.log('result' + result)
       if (result > 80) {
-        res.json('Die Ausweretung ist zu ' + result + ' % negativ')
+        res.json({ result: 'negativ', procent: Number(result) })
       } else {
-        const newResult = 100 - result
-        res.json('Die Ausweretung ist zu ' + newResult + ' % positiv')
+        res.json({ result: 'positiv', procent: 100 - Number(result) })
       }
     })
   }

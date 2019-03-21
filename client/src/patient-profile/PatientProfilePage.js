@@ -4,7 +4,6 @@ import PatientProfile from './PatientProfile'
 import PatientProfileContainer from './PatientProfileContainer'
 import Title from '../common/Title'
 import Search from '../common/Search'
-import Background from '../api/images/DevBackground.png'
 import { FaUserPlus } from 'react-icons/fa'
 
 const PageGrid = styled.div`
@@ -12,16 +11,6 @@ const PageGrid = styled.div`
   grid-template-rows: auto 1fr;
   overflow: hidden;
 `
-// const BackgroundImage = styled.div`
-//   background: white;
-//   /* background-image: url(${Background}); */
-//   margin-top: 50px;
-//   width: 100%;
-//   height: 200px;
-//   position: relative;
-//   background-repeat: no-repeat;
-//   border-bottom: 10px solid white;
-// `
 
 const StyledTitleDiv = styled.div`
   border-bottom: 2px solid #5fbf00;
@@ -38,7 +27,6 @@ export default function PatientProfilePage({ patientProfiles }) {
 
   return (
     <PageGrid>
-      {/* <BackgroundImage /> */}
       <Title css="position: absolute; top: 0; width: 100%;  color: #696969; font-size: 32px;">
         <StyledTitleDiv>
           <FaUserPlus

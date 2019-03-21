@@ -39,17 +39,7 @@ export default function Search({ onSearchInput }) {
           placeholder="Patienten suche"
           name="search"
         />
-        <FaSearch
-        // style={{
-        //   fontSize: '44px',
-        //   color: '#696969',
-        //   background: 'white',
-        //   borderBottom: '2px solid #5fbf00',
-        //   marginRight: '8px',
-        //   marginTop: '12px',
-        //   marginLeft: '12px',
-        // }}
-        />
+        <FaSearch />
       </StyledDiv>
     </StyledGrid>
   )

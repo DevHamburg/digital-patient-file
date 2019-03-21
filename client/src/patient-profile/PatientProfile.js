@@ -12,7 +12,7 @@ import {
   FaQuestion,
 } from 'react-icons/fa'
 import Bmi from '../bmi-calculator/Bmi'
-import DonutChart from '../charts/DonutChart'
+import UserChart from '../charts/UserChart'
 
 const StyledPatientProfile = styled.section`
   position: relative;
@@ -187,7 +187,6 @@ export default function PatientProfile({
                   fontSize: '52px',
                   margin: '28px',
                   color: '#5fbf00',
-                  // border: '1px solid #5fbf00',
                   borderRadius: '20px',
                 }}
               />
@@ -202,7 +201,7 @@ export default function PatientProfile({
                   fontSize: '52px',
                   margin: '28px',
                   color: '#5fbf00',
-                  // border: '1px solid #5fbf00',
+
                   borderRadius: '20px',
                 }}
               />
@@ -215,7 +214,7 @@ export default function PatientProfile({
                   fontSize: '52px',
                   margin: '28px',
                   color: '#5fbf00',
-                  // border: '1px solid #5fbf00',
+
                   borderRadius: '20px',
                 }}
               />
@@ -227,7 +226,7 @@ export default function PatientProfile({
           <Section>
             <StyledDiagramGrid>
               <Bmi weight={weight} height={height} gender={gender} />
-              <DonutChart />
+              <UserChart />
             </StyledDiagramGrid>
           </Section>
         </Grid>

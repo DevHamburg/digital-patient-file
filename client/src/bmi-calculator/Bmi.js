@@ -70,7 +70,6 @@ export default function Bmi({ height, weight, gender }) {
         startColor="#5fbf00"
         endColor="lightgray"
         segments={5}
-        // textColor="lightgray"
         width={240}
         height={130}
       />
