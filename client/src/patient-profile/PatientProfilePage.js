@@ -17,9 +17,8 @@ const StyledTitleDiv = styled.div`
   padding: 10px;
 `
 
-export default function PatientProfilePage({ patientProfiles }) {
+export default function PatientProfilePage({ patientProfiles, onDeleteClick }) {
   const [searchInput, setSearchInput] = useState('')
-
   function onSearchInput(event) {
     setSearchInput(event.target.value)
   }
@@ -38,6 +37,7 @@ export default function PatientProfilePage({ patientProfiles }) {
         </StyledTitleDiv>
       </Title>
       <Search onSearchInput={onSearchInput} />
+
       <PatientProfileContainer>
         {patientProfiles
           .filter(
@@ -50,6 +50,7 @@ export default function PatientProfilePage({ patientProfiles }) {
               key={patientProfile._id}
               patientProfile={patientProfile}
               onSearchInput={onSearchInput}
+              onDeleteClick={() => onDeleteClick(index)}
             />
           ))}
       </PatientProfileContainer>

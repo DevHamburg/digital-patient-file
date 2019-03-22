@@ -18,6 +18,10 @@ export function postNewPatientProfile(patientProfile) {
   return axios.post(patientProfilesPath, patientProfile)
 }
 
+export function deletePatientProfile(patientProfile) {
+  return axios.delete(`${patientProfilesPath}/${patientProfile._id}`)
+}
+
 export function getPatientProfilesFromStorage() {
   return getFromStorage('patientProfiles') || []
 }

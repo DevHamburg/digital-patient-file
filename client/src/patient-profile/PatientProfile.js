@@ -11,6 +11,7 @@ import {
   FaTransgenderAlt,
   FaQuestion,
 } from 'react-icons/fa'
+import { MdCancel } from 'react-icons/md'
 import Bmi from '../bmi-calculator/Bmi'
 import UserChart from '../charts/UserChart'
 
@@ -23,11 +24,18 @@ const StyledPatientProfile = styled.section`
   box-shadow: 0 0 10px #696969;
 `
 
+const StyledDeleteButton = styled.button`
+  position: absolute;
+  font-size: 44px;
+  color: #696969;
+`
+
 const Grid = styled.div`
   display: grid;
   grid-gap: 2px;
   grid-template-columns: 1fr 1fr 1fr;
 `
+
 const Section = styled.div`
   background: white;
 `
@@ -136,100 +144,104 @@ export default function PatientProfile({
   bloodType,
   bloodPressure,
   image,
+  onDeleteClick,
 }) {
   return (
-      <StyledPatientProfile>
-        <Grid>
-          <Section>
-            <HeaderGrid>
-              <img src={image} alt="" />
-              <StyledName>
-                {name} {surname}
-              </StyledName>
-            </HeaderGrid>
-            <StyledProfileText>
-              <FaUser style={{ fontSize: '24px', marginRight: '16px' }} />
-              Alter: {age}
-            </StyledProfileText>
-            <StyledProfileText>
-              <FaTransgenderAlt
-                style={{ fontSize: '24px', marginRight: '16px' }}
-              />
-              Geschlecht: {gender}
-            </StyledProfileText>
-            <StyledProfileText>
-              <FaPhone style={{ fontSize: '24px', marginRight: '16px' }} />
-              Kontakt: +49{contact}
-            </StyledProfileText>
-            <StyledProfileText>
-              <FaQuestion style={{ fontSize: '24px', marginRight: '16px' }} />
-              Befund: {findings} {percent}%
-            </StyledProfileText>
-          </Section>
-          <Section>
-            <StatusTextResultGrid>
-              <FaWeight
-                style={{
-                  fontSize: '52px',
-                  margin: '28px',
-                  color: '#5fbf00',
-                  borderRadius: '20px',
-                }}
-              />
-              <StatusText>Körperewicht:</StatusText>
-              <StatusTextResult>{weight}</StatusTextResult>
-              <StyledUnits>kg</StyledUnits>
-            </StatusTextResultGrid>
+    <StyledPatientProfile>
+      <Grid>
+        <Section>
+          <StyledDeleteButton onClick={onDeleteClick}>
+            <MdCancel />
+          </StyledDeleteButton>
+          <HeaderGrid>
+            <img src={image} alt="" />
+            <StyledName>
+              {name} {surname}
+            </StyledName>
+          </HeaderGrid>
+          <StyledProfileText>
+            <FaUser style={{ fontSize: '24px', marginRight: '16px' }} />
+            Alter: {age}
+          </StyledProfileText>
+          <StyledProfileText>
+            <FaTransgenderAlt
+              style={{ fontSize: '24px', marginRight: '16px' }}
+            />
+            Geschlecht: {gender}
+          </StyledProfileText>
+          <StyledProfileText>
+            <FaPhone style={{ fontSize: '24px', marginRight: '16px' }} />
+            Kontakt: +49{contact}
+          </StyledProfileText>
+          <StyledProfileText>
+            <FaQuestion style={{ fontSize: '24px', marginRight: '16px' }} />
+            Befund: {findings} {percent}%
+          </StyledProfileText>
+        </Section>
+        <Section>
+          <StatusTextResultGrid>
+            <FaWeight
+              style={{
+                fontSize: '52px',
+                margin: '28px',
+                color: '#5fbf00',
+                borderRadius: '20px',
+              }}
+            />
+            <StatusText>Körperewicht:</StatusText>
+            <StatusTextResult>{weight}</StatusTextResult>
+            <StyledUnits>kg</StyledUnits>
+          </StatusTextResultGrid>
 
-            <StatusTextResultGrid>
-              <FaRulerVertical
-                style={{
-                  fontSize: '52px',
-                  margin: '28px',
-                  color: '#5fbf00',
-                  borderRadius: '20px',
-                }}
-              />
-              <StatusText>Körpergröße:</StatusText>
-              <StatusTextResult>{height}</StatusTextResult>
-              <StyledUnits>cm</StyledUnits>
-            </StatusTextResultGrid>
+          <StatusTextResultGrid>
+            <FaRulerVertical
+              style={{
+                fontSize: '52px',
+                margin: '28px',
+                color: '#5fbf00',
+                borderRadius: '20px',
+              }}
+            />
+            <StatusText>Körpergröße:</StatusText>
+            <StatusTextResult>{height}</StatusTextResult>
+            <StyledUnits>cm</StyledUnits>
+          </StatusTextResultGrid>
 
-            <StatusTextResultGrid>
-              <FaTint
-                style={{
-                  fontSize: '52px',
-                  margin: '28px',
-                  color: '#5fbf00',
+          <StatusTextResultGrid>
+            <FaTint
+              style={{
+                fontSize: '52px',
+                margin: '28px',
+                color: '#5fbf00',
 
-                  borderRadius: '20px',
-                }}
-              />
-              <StatusText>Blutgruppe:</StatusText>
-              <StatusTextResult>{bloodType}</StatusTextResult>
-            </StatusTextResultGrid>
-            <StatusTextResultGrid>
-              <FaStopwatch
-                style={{
-                  fontSize: '52px',
-                  margin: '28px',
-                  color: '#5fbf00',
+                borderRadius: '20px',
+              }}
+            />
+            <StatusText>Blutgruppe:</StatusText>
+            <StatusTextResult>{bloodType}</StatusTextResult>
+          </StatusTextResultGrid>
+          <StatusTextResultGrid>
+            <FaStopwatch
+              style={{
+                fontSize: '52px',
+                margin: '28px',
+                color: '#5fbf00',
 
-                  borderRadius: '20px',
-                }}
-              />
-              <StatusText>Blutdruck:</StatusText>
-              <StatusTextResult>{bloodPressure}</StatusTextResult>
-              <StyledUnits>mmhg</StyledUnits>
-            </StatusTextResultGrid>
-          </Section>
-          <Section>
-            <StyledDiagramGrid>
-              <Bmi weight={weight} height={height} gender={gender} />
-              <UserChart percent={percent}/>
-            </StyledDiagramGrid>
-          </Section>
-        </Grid>
-      </StyledPatientProfile>
+                borderRadius: '20px',
+              }}
+            />
+            <StatusText>Blutdruck:</StatusText>
+            <StatusTextResult>{bloodPressure}</StatusTextResult>
+            <StyledUnits>mmhg</StyledUnits>
+          </StatusTextResultGrid>
+        </Section>
+        <Section>
+          <StyledDiagramGrid>
+            <Bmi weight={weight} height={height} gender={gender} />
+            <UserChart percent={percent} />
+          </StyledDiagramGrid>
+        </Section>
+      </Grid>
+    </StyledPatientProfile>
   )
 }
