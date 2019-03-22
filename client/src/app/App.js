@@ -7,6 +7,7 @@ import {
   getAllPatientProfiles,
   getPatientProfilesFromStorage,
   postNewPatientProfile,
+  deletePatientProfile,
   savePatientProfilesToStorage,
 } from '../services'
 import Evaluation from '../evaluation/Evaluation'
@@ -83,6 +84,15 @@ function App() {
     })
   }
 
+  function onDeleteClick(index) {
+    deletePatientProfile(index).then(res => {
+      setPatientProfiles([
+        ...patientProfiles.slice(0, index),
+        ...patientProfiles.slice(index + 1),
+      ])
+    })
+  }
+
   return (
     <Router>
       <Grid>
@@ -90,7 +100,10 @@ function App() {
           exact
           path="/"
           render={() => (
-            <PatientProfilePage patientProfiles={patientProfiles} />
+            <PatientProfilePage
+              patientProfiles={patientProfiles}
+              onDeleteClick={onDeleteClick}
+            />
           )}
         />
 
