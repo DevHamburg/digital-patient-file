@@ -1,7 +1,7 @@
 import React from 'react'
 import { Chart } from 'react-google-charts'
 
-export default function UserChart({ positiveResult, negativeResult }) {
+export default function UserChart({percent}) {
   const pieOptions = {
     pieHole: 0.5,
     slices: [
@@ -32,11 +32,12 @@ export default function UserChart({ positiveResult, negativeResult }) {
     fontName: 'Roboto, sans-serif',
   }
 
+  const number = Number(percent)
   return (
     <div>
       <Chart
         chartType="PieChart"
-        data={[['Age', 'Weight'], ['Wert', 20], ['Rest', 80]]}
+        data={[['Age', 'Weight'], ['Wert', number], ['Rest', 100 - number]]}
         options={pieOptions}
         graph_id="PieChart"
         width={'380px'}

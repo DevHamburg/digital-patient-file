@@ -115,6 +115,7 @@ PatientProfile.propTypes = {
   contact: PropTypes.string,
   gender: PropTypes.string,
   findings: PropTypes.string,
+  percent: PropTypes.string,
   weight: PropTypes.string,
   height: PropTypes.string,
   bloodType: PropTypes.string,
@@ -129,6 +130,7 @@ export default function PatientProfile({
   gender,
   contact,
   findings,
+  percent,
   weight,
   height,
   bloodType,
@@ -136,7 +138,6 @@ export default function PatientProfile({
   image,
 }) {
   return (
-    <React.Fragment>
       <StyledPatientProfile>
         <Grid>
           <Section>
@@ -162,7 +163,7 @@ export default function PatientProfile({
             </StyledProfileText>
             <StyledProfileText>
               <FaQuestion style={{ fontSize: '24px', marginRight: '16px' }} />
-              Befund: {findings}
+              Befund: {findings} {percent}%
             </StyledProfileText>
           </Section>
           <Section>
@@ -172,7 +173,6 @@ export default function PatientProfile({
                   fontSize: '52px',
                   margin: '28px',
                   color: '#5fbf00',
-                  // border: '1px solid #5fbf00',
                   borderRadius: '20px',
                 }}
               />
@@ -226,11 +226,10 @@ export default function PatientProfile({
           <Section>
             <StyledDiagramGrid>
               <Bmi weight={weight} height={height} gender={gender} />
-              <UserChart />
+              <UserChart percent={percent}/>
             </StyledDiagramGrid>
           </Section>
         </Grid>
       </StyledPatientProfile>
-    </React.Fragment>
   )
 }

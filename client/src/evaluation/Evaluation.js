@@ -89,7 +89,7 @@ export default class Evaluation extends Component {
   state = {
     description: '',
     selectedFile: '',
-    result: { procent: 50 },
+    result: { percent: 50 },
     isActive: false,
   }
 
@@ -190,10 +190,10 @@ export default class Evaluation extends Component {
               chartType="PieChart"
               data={[
                 ['Age', 'Weight'],
-                ['Wert', this.state.result ? this.state.result.procent : 100],
+                ['Wert', this.state.result ? this.state.result.percent : 100],
                 [
                   'Rest',
-                  this.state.result ? 100 - this.state.result.procent : 100,
+                  this.state.result ? 100 - this.state.result.percent : 100,
                 ],
               ]}
               options={pieOptions}
@@ -203,7 +203,7 @@ export default class Evaluation extends Component {
               legend_toggle
             />
             <h2>
-              {this.state.result.procent}% {this.state.result.result}
+              {this.state.result.percent}% {this.state.result.result}
             </h2>
             <form onSubmit={this.onSubmit}>
               <StyledButtonGrid>

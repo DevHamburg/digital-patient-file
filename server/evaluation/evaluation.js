@@ -45,9 +45,9 @@ router.post('/', upload.single('description'), (req, res) => {
       const result = preResult.toFixed(2)
       console.log('result' + result)
       if (result > 80) {
-        res.json({ result: 'negativ', procent: Number(result) })
+        res.json({ result: 'negativ', percent: Number(result) })
       } else {
-        res.json({ result: 'positiv', procent: 100 - Number(result) })
+        res.json({ result: 'positiv', percent: 100 - Number(result) })
       }
     })
   }

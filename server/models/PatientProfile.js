@@ -25,6 +25,10 @@ const PatientProfileSchema = new mongoose.Schema({
   findings: {
     type: mongoose.SchemaTypes.String,
   },
+  percent: {
+    type: mongoose.SchemaTypes.String,
+    set: val => Number(val),
+  },
   weight: {
     type: mongoose.SchemaTypes.String,
     set: val => Number(val),

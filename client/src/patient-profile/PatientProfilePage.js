@@ -22,7 +22,6 @@ export default function PatientProfilePage({ patientProfiles }) {
 
   function onSearchInput(event) {
     setSearchInput(event.target.value)
-    console.log(searchInput)
   }
 
   return (

@@ -26,6 +26,7 @@ const defaultData = {
   gender: '',
   contact: '',
   findings: '',
+  percent: '',
   weight: '',
   height: '',
   bloodType: '',
@@ -65,6 +66,16 @@ export default function CreatePatientProfile(props) {
       ...data,
       [event.target.name]: event.target.value,
     })
+    console.log(event.target.value)
+  }
+
+  function onButtonClick(event) {
+    event.preventDefault()
+    setData({
+      ...data,
+      [event.target.name]: event.target.value,
+    })
+    console.log(event.target.name)
   }
 
   function onSubmit(event) {
@@ -83,6 +94,7 @@ export default function CreatePatientProfile(props) {
     gender,
     contact,
     findings,
+    percent,
     weight,
     height,
     bloodType,
@@ -98,6 +110,7 @@ export default function CreatePatientProfile(props) {
           gender ||
           contact ||
           findings ||
+          percent ||
           weight ||
           height ||
           bloodType ||
@@ -110,6 +123,7 @@ export default function CreatePatientProfile(props) {
             gender={gender}
             contact={contact}
             findings={findings}
+            percent={percent}
             weight={weight}
             height={height}
             bloodType={bloodType}
@@ -133,6 +147,7 @@ export default function CreatePatientProfile(props) {
         onSubmit={onSubmit}
         onInputChange={onInputChange}
         onImageUpload={onImageUpload}
+        onButtonClick={onButtonClick}
       />
     </Grid>
   )
