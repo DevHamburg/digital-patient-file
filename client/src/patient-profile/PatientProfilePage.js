@@ -33,7 +33,7 @@ export default function PatientProfilePage({ patientProfiles, onDeleteClick }) {
               marginRight: '10px',
             }}
           />
-          Patientenprofil
+          Patienten Profil
         </StyledTitleDiv>
       </Title>
       <Search onSearchInput={onSearchInput} />

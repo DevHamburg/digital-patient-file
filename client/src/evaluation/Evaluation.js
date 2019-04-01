@@ -124,8 +124,6 @@ export default class Evaluation extends Component {
         imagePreviewUrl: reader.result,
       })
     }
-    console.log('selectedFile ' + selectedFile)
-    console.log('reader ' + reader.result)
     reader.readAsDataURL(selectedFile)
   }
 
